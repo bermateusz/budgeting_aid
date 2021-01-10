@@ -7,6 +7,7 @@ import com.bereda.budgeting_aid.exceptions.ValidationException;
 import com.bereda.budgeting_aid.model.BudgetCategoryResponse;
 import com.bereda.budgeting_aid.model.CreateCategory;
 import com.bereda.budgeting_aid.repository.BudgetRepository;
+import lombok.Value;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -173,8 +174,7 @@ class BudgetServiceTest {
         assertThat(fixtures.walletCategory.getAmount()).isEqualByComparingTo(BigDecimal.valueOf(900));
     }
 
-
-
+    @Value
     private static class Fixtures {
         Long wrongCategoryId = 3L;
         Long walletCategoryId = 1L;
@@ -201,101 +201,5 @@ class BudgetServiceTest {
                 .amount(walletCategoryBalance)
                 .build();
 
-        public Long getWrongCategoryId() {
-            return wrongCategoryId;
-        }
-
-        public void setWrongCategoryId(Long wrongCategoryId) {
-            this.wrongCategoryId = wrongCategoryId;
-        }
-
-        public Long getWalletCategoryId() {
-            return walletCategoryId;
-        }
-
-        public void setWalletCategoryId(Long walletCategoryId) {
-            this.walletCategoryId = walletCategoryId;
-        }
-
-        public String getWalletCategoryName() {
-            return walletCategoryName;
-        }
-
-        public void setWalletCategoryName(String walletCategoryName) {
-            this.walletCategoryName = walletCategoryName;
-        }
-
-        public BigDecimal getWalletCategoryBalance() {
-            return walletCategoryBalance;
-        }
-
-        public void setWalletCategoryBalance(BigDecimal walletCategoryBalance) {
-            this.walletCategoryBalance = walletCategoryBalance;
-        }
-
-        public Long getSavingsCategoryId() {
-            return savingsCategoryId;
-        }
-
-        public void setSavingsCategoryId(Long savingsCategoryId) {
-            this.savingsCategoryId = savingsCategoryId;
-        }
-
-        public String getSavingsCategoryName() {
-            return savingsCategoryName;
-        }
-
-        public void setSavingsCategoryName(String savingsCategoryName) {
-            this.savingsCategoryName = savingsCategoryName;
-        }
-
-        public BigDecimal getSavingsCategoryBalance() {
-            return savingsCategoryBalance;
-        }
-
-        public void setSavingsCategoryBalance(BigDecimal savingsCategoryBalance) {
-            this.savingsCategoryBalance = savingsCategoryBalance;
-        }
-
-        public BigDecimal getTransferAmount() {
-            return transferAmount;
-        }
-
-        public void setTransferAmount(BigDecimal transferAmount) {
-            this.transferAmount = transferAmount;
-        }
-
-        public BigDecimal getDepositAmount() {
-            return depositAmount;
-        }
-
-        public void setDepositAmount(BigDecimal depositAmount) {
-            this.depositAmount = depositAmount;
-        }
-
-        public BudgetCategory getWalletCategory() {
-            return walletCategory;
-        }
-
-        public void setWalletCategory(BudgetCategory walletCategory) {
-            this.walletCategory = walletCategory;
-        }
-
-        public BudgetCategory getSavingsCategory() {
-            return savingsCategory;
-        }
-
-        public void setSavingsCategory(BudgetCategory savingsCategory) {
-            this.savingsCategory = savingsCategory;
-        }
-
-        public CreateCategory getWalletCategoryDTO() {
-            return walletCategoryDTO;
-        }
-
-        public void setWalletCategoryDTO(CreateCategory walletCategoryDTO) {
-            this.walletCategoryDTO = walletCategoryDTO;
-        }
     }
-
 }

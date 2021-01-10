@@ -76,6 +76,10 @@ public class BudgetService {
     }
 
     public void deleteCategory(final Long id) {
+        final BudgetCategory deleteCategory = findById(id);
+        if(deleteCategory.getAmount().compareTo(BigDecimal.ZERO)>0){
+            throw new ValidationException("Cannot delete category when amount is not equal to 0");
+        }
         budgetRepository.deleteById(id);
     }
 
