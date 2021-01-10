@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Builder
 @Value
-public class CreateCategoryDTO {
+public class CreateCategory {
     String name;
     BigDecimal amount;
 }

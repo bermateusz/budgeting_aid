@@ -1,4 +1,4 @@
-CREATE TABLE budget_category
+CREATE TABLE IF NOT EXISTS  budget_category
 (
 id SERIAL PRIMARY KEY,
 name VARCHAR(75) NOT NULL,

@@ -15,7 +15,7 @@ import static com.bereda.budgeting_aid.model.TransferRequest.*;
 @JsonDeserialize(builder = TransferRequestBuilder.class)
 public class TransferRequest {
     @NonNull
-    Long targetRegisterId;
+    Long targetId;
     @NonNull
     BigDecimal amount;
 
